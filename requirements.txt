@@ -1,0 +1,8 @@
+tqdm
+openai
+shortuuid
+openpyxl
+translate
+yacs
+chardet
+charset-normalizer==2.1.0

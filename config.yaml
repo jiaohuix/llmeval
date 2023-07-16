@@ -1,0 +1,32 @@
+#infer_name:
+#  ptm: ptm_name_or_path
+#  peft: peft_name_or_path
+
+chatglm_6b_api:
+  ptm: http://100.126.237.58:8000
+  peft: None
+
+hello:
+  ptm: helo_path
+  peft: None
+
+llama_13b_lora:
+  ptm: decapoda-research/llama-13b-hf
+  peft: shibing624/llama-13b-belle-zh-lora
+
+llama_7b_alpaca_plus:
+  ptm: shibing624/chinese-alpaca-plus-7b-hf
+  peft: None
+
+llama_13b_alpaca_plus:
+  ptm: shibing624/chinese-alpaca-plus-13b-hf
+  peft: None
+
+chatglm_6b:
+  ptm: THUDM/chatglm-6b
+  peft: None
+
+chatglm_6b_lora:
+  ptm: THUDM/chatglm-6b
+  peft: shibing624/chatglm-6b-belle-zh-lora
+
