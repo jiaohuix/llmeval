@@ -1,6 +1,3 @@
-先使用llmeval对不同的模型进行推理，需要指定alpaca-eval参数生成alpaca_eval需要的数据格式。然后再用alpaca_eval的make_leaderboard
-
-环境，推理
 
 ## 1.准备环境
 
