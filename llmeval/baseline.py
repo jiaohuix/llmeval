@@ -9,13 +9,7 @@ import openai
 import tqdm
 import shortuuid
 from llmeval.file_io import read_file,write_jsonl
-
-openai.api_type = "azure"
-openai.api_base = "https://cheneyoai2.openai.azure.com/"
-openai.api_version = "2023-03-15-preview"
-openai.api_key = "708a3eebe1534b19879ae4a8b87de600"
-
-
+openai.proxy = {"https":"http://127.0.0.1:7890","http":"http://127.0.0.1:7890"}
 
 def get_answer(question_id: int, question: str, max_tokens: int,
                model = "gpt-3.5-turbo",
@@ -28,23 +22,16 @@ def get_answer(question_id: int, question: str, max_tokens: int,
     for _ in range(3):
         try:
             response = openai.ChatCompletion.create(
-                engine="gpt35-1",
+                model=model,
                 messages=[
                     {"role": "system", "content": "You are a helpful assistant."},
-                    {"role": "user", "content": question}],
-                max_tokens=max_tokens)
-
-            # response = openai.ChatCompletion.create(
-            #     model=model,
-            #     messages=[
-            #         {"role": "system", "content": "You are a helpful assistant."},
-            #         {
-            #             "role": "user",
-            #             "content": question,
-            #         },
-            #     ],
-            #     max_tokens=max_tokens,
-            # )
+                    {
+                        "role": "user",
+                        "content": question,
+                    },
+                ],
+                max_tokens=max_tokens,
+            )
             ans["text"] = response["choices"][0]["message"]["content"]
             return ans
         except Exception as e:

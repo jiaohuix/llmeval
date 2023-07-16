@@ -3,7 +3,7 @@
 #  peft: peft_name_or_path
 
 chatglm_6b_api:
-  ptm: http://100.126.237.58:8000
+  ptm: http://127.0.0.1:8000
   peft: None
 
 hello:

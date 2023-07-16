@@ -4,7 +4,7 @@ from llmeval.infer import register_llm_infer
 
 @register_llm_infer("chatglm_6b_api")
 def infer_chatglm_6b_api(text_ls,
-          ptm_name="http://100.126.237.58:8000",
+          ptm_name="http://127.0.0.1:8000",
           peft_name=None):
     res = []
     for text in text_ls:
